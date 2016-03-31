@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch", "EntitySearch\EntitySearch.csproj", "{135A6B7D-DAAE-4962-8A4C-195CE70A1361}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch.Demo.Web", "EntitySearch.Demo.Web\EntitySearch.Demo.Web.csproj", "{135A6B7D-DAAE-4962-8A4C-195CE70A1361}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch.Tests", "EntitySearch.Tests\EntitySearch.Tests.csproj", "{38D82332-4A01-4F69-B963-D11B3729BC96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch.Demo.Web.Tests", "EntitySearch.Demo.Web.Tests\EntitySearch.Demo.Web.Tests.csproj", "{38D82332-4A01-4F69-B963-D11B3729BC96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch.Demo.Models", "EntitySearch.Demo.Models\EntitySearch.Demo.Models.csproj", "{76A61B08-86FD-48A3-979B-3CCD8704B66C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch.Engine", "EntitySearch.Engine\EntitySearch.Engine.csproj", "{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{38D82332-4A01-4F69-B963-D11B3729BC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38D82332-4A01-4F69-B963-D11B3729BC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38D82332-4A01-4F69-B963-D11B3729BC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A61B08-86FD-48A3-979B-3CCD8704B66C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A61B08-86FD-48A3-979B-3CCD8704B66C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A61B08-86FD-48A3-979B-3CCD8704B66C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A61B08-86FD-48A3-979B-3CCD8704B66C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

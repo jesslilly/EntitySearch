@@ -9,8 +9,8 @@
     <ProjectGuid>{38D82332-4A01-4F69-B963-D11B3729BC96}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EntitySearch.Tests</RootNamespace>
-    <AssemblyName>EntitySearch.Tests</AssemblyName>
+    <RootNamespace>EntitySearch.Demo.Web.Tests</RootNamespace>
+    <AssemblyName>EntitySearch.Demo.Web.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EntitySearch\EntitySearch.csproj">
+    <ProjectReference Include="..\EntitySearch.Demo.Web\EntitySearch.Demo.Web.csproj">
       <Project>{135A6B7D-DAAE-4962-8A4C-195CE70A1361}</Project>
-      <Name>EntitySearch</Name>
+      <Name>EntitySearch.Demo.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
