@@ -2,23 +2,23 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>EntitySearch Demo</h1>
-    <p class="lead">This is a demo web app to show the features of EntitySearch.</p>
-</div>
+<h1>EntitySearch Demo</h1>
+<p class="lead">This is a demo web app to show the features of EntitySearch.</p>
 
+<div class="row">
+    <div class="col-md-3">
+        <form class="form" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+        </form>
 
-<form class="form" role="search">
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
+        <div class="list-group">
+            @Html.ActionLink("Warehouses", "Index", new { Controller = "Warehouses" }, htmlAttributes: new { @class = "list-group-item" })
+            @Html.ActionLink("Products", "Index", new { Controller = "Products" }, htmlAttributes: new { @class = "list-group-item" })
+            @Html.ActionLink("Inventory", "Index", new { Controller = "Inventories" }, htmlAttributes: new { @class = "list-group-item" })
+            @Html.ActionLink("Customers", "Index", new { Controller = "Customers" }, htmlAttributes: new { @class = "list-group-item" })
+            @Html.ActionLink("Orders", "Index", new { Controller = "Orders" }, htmlAttributes: new { @class = "list-group-item" })
+        </div>        
     </div>
-</form>
-
-<div class="list-group">
-    @Html.ActionLink("Warehouses", "Index", new {Controller = "Warehouses"}, htmlAttributes: new {@class = "list-group-item"})
-    @Html.ActionLink("Products", "Index", new {Controller = "Products"}, htmlAttributes: new {@class = "list-group-item"})
-    @Html.ActionLink("Inventory", "Index", new {Controller = "Inventories"}, htmlAttributes: new {@class = "list-group-item"})
-    @Html.ActionLink("Customers", "Index", new {Controller = "Customers"}, htmlAttributes: new {@class = "list-group-item"})
-    @Html.ActionLink("Orders", "Index", new {Controller = "Orders"}, htmlAttributes: new {@class = "list-group-item"})
 </div>
-
