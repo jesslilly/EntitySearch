@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntitySearch.Demo.Models
 {
-    class Inventory
+    public class Inventory
     {
         public int InventoryId { get; set; }
 

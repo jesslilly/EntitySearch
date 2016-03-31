@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntitySearch.Demo.Models
 {
-    class Customer
+    public class Customer
     {
         public int CustomerId { get; set; }
         [StringLength(100)]

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntitySearch.Demo.Models
 {
-    class Order
+    public class Order
     {
         public int OrderId { get; set; }
 
