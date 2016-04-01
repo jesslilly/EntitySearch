@@ -17,22 +17,39 @@
 
     function showSearchPopup() {
         console.log("showSearchPopup on " + this.id);
+
         var newDiv = document.createElement("div");
         newDiv.id = 'entity-search-popup'; // TODO come up with a better way.
-        var newContent = document.createTextNode("Recently Viewed Pages");
-        newDiv.appendChild(newContent);
+        newDiv.className = 'list-group';
         newDiv.style.position = "absolute";
         newDiv.style.zIndex = 999;
         newDiv.style.backgroundColor = "#FFFFFF";
         //newDiv.style.top = "50px;";
         //newDiv.style.left = "50px;";
+
+        var links = [
+            '/Warehouses/Details/5',
+            '/Warehouses/Details/6',
+            '/Warehouses/Details/7',
+            '/Warehouses/Details/8',
+        ];
+
+        links.forEach(function (link, index) {
+            var a = document.createElement('a');
+            a.title = "Go to " + link;
+            a.href = link;
+            a.className = "list-group-item";
+            var linkText = document.createTextNode("Go to " + link);
+            a.appendChild(linkText);
+            newDiv.appendChild(a);
+        });
         this.parentElement.appendChild(newDiv);
     }
 
-    function hideSearchPopup() {
+    function hideSearchPopup(event) {
         console.log("hideSearchPopup");
-        var searchPopup = document.getElementById("entity-search-popup");
-        searchPopup.parentElement.removeChild(searchPopup);
+        //var searchPopup = document.getElementById("entity-search-popup");
+        //searchPopup.parentElement.removeChild(searchPopup);
     }
 
     function pageLoad() {
