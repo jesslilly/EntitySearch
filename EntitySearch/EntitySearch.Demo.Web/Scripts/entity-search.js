@@ -21,6 +21,11 @@
         newDiv.id = 'entity-search-popup'; // TODO come up with a better way.
         var newContent = document.createTextNode("Recently Viewed Pages");
         newDiv.appendChild(newContent);
+        newDiv.style.position = "absolute";
+        newDiv.style.zIndex = 999;
+        newDiv.style.backgroundColor = "#FFFFFF";
+        //newDiv.style.top = "50px;";
+        //newDiv.style.left = "50px;";
         this.parentElement.appendChild(newDiv);
     }
 
