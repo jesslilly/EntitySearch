@@ -8,7 +8,7 @@ This project is in development.
 For ASP.NET MVC applications, provide a way of tracking "recently visited pages" and search functionality.  Support bootstrap theming.
 
 Provide a search box where:
-* Users will see recent pages in a drop down.
+* Users will view and click on recent pages in a drop down.
 * Users can search for entities with auto-complete.
 
 ## How to use EntitySearch
@@ -30,7 +30,8 @@ Provide a search box where:
 1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
 1. Track recents in local storage.
 1. Retrive recents in searchPopup.
-1. Recent object should have lastVisted, title, url, entity type, 
+1. Recent object should have lastVisted, title, url, entity type.
+
 ### Nice to have / Future
 1. for multi tenant or multiple user accounts in an app, need to key local storage of recents by a base url/user group?
 1. Allow search boxes filtered by entity type (for linking)
