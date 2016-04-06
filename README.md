@@ -1,5 +1,6 @@
 # EntitySearch
 
+This project is in development. 
 
 ## Use Case
 
