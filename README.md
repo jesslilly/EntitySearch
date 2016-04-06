@@ -16,17 +16,22 @@ Provide a search box where:
 	TODO: Provide example
 * Create a text box with HTML attribute data-entity-search
 	TODO: Provide example
+* Add data- attribute to pages you want to be tracked. TODO: Code example. 
 * Create a controller action like this and seed the search engine with your data
 	TODO: Provide example
 
-
+## Assumptions
+1. Devs will not want to create new data structures to use EntitySearch. 
+2. Therefore, localStorage will suffice for recent tracking. But, recents will be different across user devices...
 
 ## TODOs
 ### Necessary
+1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
 1. Track recents in local storage.
 1. Retrive recents in searchPopup.
-1. Recent object should have lastVisted prop.
+1. Recent object should have lastVisted, title, url, entity type, 
 ### Nice to have / Future
+1. for multi tenant or multiple user accounts in an app, need to key local storage of recents by a base url/user group?
 1. Allow search boxes filtered by entity type (for linking)
 1. Security groups (filter the search by tenant/security group?)
 1. Number of results in popup data element.  Example: data-entity-search="{show:5}"
