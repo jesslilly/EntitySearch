@@ -22,9 +22,12 @@ Provide a search box where:
 
 
 ## TODOs
+### Necessary
 1. Track recents in local storage.
 1. Retrive recents in searchPopup.
 1. Recent object should have lastVisted prop.
+### Nice to have / Future
 1. Allow search boxes filtered by entity type (for linking)
 1. Security groups (filter the search by tenant/security group?)
+1. Number of results in popup data element.  Example: data-entity-search="{show:5}"
 1. Fix git repo for Windows line endings.
