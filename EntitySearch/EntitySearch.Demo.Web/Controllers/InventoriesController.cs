@@ -28,7 +28,10 @@ namespace EntitySearch.Demo.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Inventory inventory = db.Inventories.Find(id);
+            Inventory inventory = db.Inventories
+                .Include(x => x.Product)
+                .Include(x => x.Warehouse)
+                .FirstOrDefault(x => x.InventoryId == id);
             if (inventory == null)
             {
                 return HttpNotFound();

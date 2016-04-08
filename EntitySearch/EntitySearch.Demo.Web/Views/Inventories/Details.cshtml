@@ -1,7 +1,7 @@
 ﻿@model EntitySearch.Demo.Models.Inventory
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = string.Format("Qty {1} of {0} at {2}", @Model.Product.Description, @Model.Quantity, @Model.Warehouse.Code);
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 

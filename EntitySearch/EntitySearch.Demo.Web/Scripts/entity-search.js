@@ -44,21 +44,16 @@
         popup.style.zIndex = 999;
         popup.style.backgroundColor = "#FFFFFF";
 
-        var links = [
-            "/Warehouses/Details/5",
-            "/Warehouses/Details/6",
-            "/Warehouses/Details/7",
-            "/Warehouses/Details/8",
-        ];
+        var recents = getFromLocalStorage();
 
-        links.forEach(function (link, index) {
+        recents.forEach(function (recentPage, index) {
             var a = document.createElement("a");
-            a.title = "Go to " + link;
-            a.href = link;
+            a.title = "Go to " + recentPage.title;
+            a.href = recentPage.href;
             a.className = "list-group-item";
             a.setAttribute("data-entity-search-group", group);
             a.addEventListener("blur", hideSearchPopup);
-            var linkText = document.createTextNode("Go to " + link);
+            var linkText = document.createTextNode(recentPage.title);
             a.appendChild(linkText);
             popup.appendChild(a);
         });
@@ -79,7 +74,50 @@
         this.parentElement.appendChild(popup);
     }
 
+    function trackRecentPage() {
+        var scriptElement = document.querySelector("script[data-entity-search-route-data]");
+        if (!scriptElement) {
+            return;
+        }
+        var pageInfo = JSON.parse(scriptElement.textContent);
+        if (pageInfo) {
+            pageInfo.href = document.location.href;
+            pageInfo.lastVisted = new Date();
+            // Users can set their own custom page title in the route data json if they want.
+            if (!pageInfo.title) {
+                pageInfo.title = document.title;
+                addToLocalStorage(pageInfo);
+            }
+        }
+    }
+
+    function addToLocalStorage(pageInfo) {
+        // The key to localStorage is important.
+        // TODO investigate if roots https://myhost.com/app1 and https://myhost.com/app2 are the same.  I think they are!
+        // We have to use href here for now.  We can't assume a default ASP.NET MVC RouteConfig.
+        // TODO Some way of setting a max number of recent tracking.
+        // TODO instead of many keys, perhaps use one key with an object.  Might be inefficient to JSON.parse the object all the time?
+        // TODO prevent duplicates.  Maybe use a map instead of an array.
+        var key = "entity-search-"; // TODO + base url;
+
+        var recents = JSON.parse(localStorage.getItem(key));
+        if (! Array.isArray(recents)) {
+            recents = [];
+        }
+        recents.push(pageInfo);
+
+        localStorage.setItem(key, JSON.stringify(recents));
+    }
+
+    function getFromLocalStorage() {
+        var key = "entity-search-"; // TODO + base url;
+        return JSON.parse(localStorage.getItem(key));
+    }
+
     function pageLoad() {
+
+        trackRecentPage();
+
         var searchBoxes = document.querySelectorAll("[data-entity-search]");
         // http://stackoverflow.com/questions/13433799/why-doesnt-nodelist-have-foreach
         for (var index = 0; index < searchBoxes.length; index++) {

@@ -49,6 +49,20 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
-    <script src=@Url.Content("~/Scripts/entity-search.js")></script>
+    @* EntitySearch: Set Route Data in the page to track this page as a recent. *@
+    @{
+        var routeValues = ViewContext.RouteData.Values.ToDictionary(x => x.Key, x => x.Value);
+        // You will need to customize this if statement to configure which pages you want to be searchable.
+        if (routeValues.ContainsKey("action")
+            && (string)routeValues["action"] != "Edit"
+            && (string)routeValues["action"] != "Create"
+            && (string)routeValues["action"] != "Delete")
+        {
+            <script type="application/json" data-entity-search-route-data>@Html.Raw(Json.Encode(routeValues))</script>
+        }
+    }
+
+    @* EntitySearch: Main javascript include for all pages in _Layout.cshtml. *@
+    <script src=@Url.Content("~/Scripts/entity-search.js")></script>  
 </body>
 </html>

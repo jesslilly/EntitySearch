@@ -27,10 +27,9 @@ Provide a search box where:
 
 ## TODOs
 ### Necessary
-1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
-1. Track recents in local storage.
-1. Retrive recents in searchPopup.
-1. Recent object should have lastVisted, title, url, entity type.
+1. Need to fix duplicates and sort order.
+1. Add javascript tests.  Maybe use a test page, or jasmine.
+1. Search for TODOs in code.
 
 ### Nice to have / Future
 1. for multi tenant or multiple user accounts in an app, need to key local storage of recents by a base url/user group?
@@ -38,3 +37,10 @@ Provide a search box where:
 1. Security groups (filter the search by tenant/security group?)
 1. Number of results in popup data element.  Example: data-entity-search="{show:5}"
 1. Fix git repo for Windows line endings.
+
+## Done
+1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
+1. Track recents in local storage.
+1. Retrive recents in searchPopup.
+1. Recent object should have lastVisted, title, url (from document.location.href), entity type (controller), all route values including ID.
+
