@@ -1,4 +1,5 @@
-﻿
+﻿// todo refactor all this code to be more testable and object oriented.
+
 // TODO It might be nice to allow users to create their own template for the drop down?
 //<template class="hello-template">
 //  <div class="hello">
@@ -44,7 +45,7 @@
         popup.style.zIndex = 999;
         popup.style.backgroundColor = "#FFFFFF";
 
-        var recents = getFromLocalStorage();
+        var recents = getTopDistinctRecents(8); // todo make this 8 configurable?
 
         recents.forEach(function (recentPage, index) {
             var a = document.createElement("a");
@@ -53,7 +54,7 @@
             a.className = "list-group-item";
             a.setAttribute("data-entity-search-group", group);
             a.addEventListener("blur", hideSearchPopup);
-            var linkText = document.createTextNode(recentPage.title);
+            var linkText = document.createTextNode(index + ") " + recentPage.title);
             a.appendChild(linkText);
             popup.appendChild(a);
         });
@@ -93,7 +94,7 @@
 
     function addToLocalStorage(pageInfo) {
         // The key to localStorage is important.
-        // TODO investigate if roots https://myhost.com/app1 and https://myhost.com/app2 are the same.  I think they are!
+        // TODO investigate if roots https://myhost.com/app1 and https://myhost.com/app2 are the same.  I think they are!  If they are, we need to add the virtual directory to the key.
         // We have to use href here for now.  We can't assume a default ASP.NET MVC RouteConfig.
         // TODO Some way of setting a max number of recent tracking.
         // TODO instead of many keys, perhaps use one key with an object.  Might be inefficient to JSON.parse the object all the time?
@@ -104,7 +105,13 @@
         if (! Array.isArray(recents)) {
             recents = [];
         }
-        recents.push(pageInfo);
+        // Always add to the beginning of the array it is always sorted by most recently visited.
+        recents.unshift(pageInfo);
+
+        // TODO make this configurable.
+        if (recents.length > 100) {
+            recents.pop();
+        }
 
         localStorage.setItem(key, JSON.stringify(recents));
     }
@@ -112,6 +119,39 @@
     function getFromLocalStorage() {
         var key = "entity-search-"; // TODO + base url;
         return JSON.parse(localStorage.getItem(key));
+    }
+
+    // TODO better jsdoc type comments.
+    // Return the top N distinct recently visited pages.
+    // (The memory structure for recents allows duplicates.)
+    function getTopDistinctRecents(count) {
+        var recents = getFromLocalStorage();
+        // todo seed array with certain size?
+        var topRecents = [];
+        if (recents.length < count) {
+            count = recents.length;
+        }
+
+        // todo - don't return the page we are already on???
+
+        // Might be nice to have underscore here, but this is such a small library; we don't want dependencies.
+        for (var index = 0; topRecents.length < count; index++) {
+            var recent = recents[index];
+
+            var isDuplicate = false;
+
+            for (var index2 = 0; index2 < topRecents.length; index2++) {
+                var topRecent = topRecents[index2];
+                if (topRecent.href === recent.href) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            if (!isDuplicate) {
+                topRecents.push(recent);
+            }
+        }
+        return topRecents;
     }
 
     function pageLoad() {
