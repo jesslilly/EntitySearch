@@ -28,8 +28,8 @@ Provide a search box where:
 
 ## TODOs
 ### Necessary
-1. Need to fix duplicates and sort order.
 1. Add javascript tests.  Maybe use a test page, or jasmine.
+1. Refactor to RecentPage object.
 1. Search for TODOs in code.
 
 ### Nice to have / Future
@@ -44,4 +44,5 @@ Provide a search box where:
 1. Track recents in local storage.
 1. Retrive recents in searchPopup.
 1. Recent object should have lastVisted, title, url (from document.location.href), entity type (controller), all route values including ID.
+1. Need to fix duplicates and sort order.
 
