@@ -44,17 +44,18 @@
         popup.style.position = "absolute";
         popup.style.zIndex = 999;
         popup.style.backgroundColor = "#FFFFFF";
+        popup.style["box-shadow"] = "0px 4px 4px gray";
 
         var recents = getTopDistinctRecents(8); // todo make this 8 configurable?
 
         recents.forEach(function (recentPage, index) {
             var a = document.createElement("a");
-            a.title = "Go to " + recentPage.title;
+            //a.title = "Go to " + recentPage.title; Link titles are distracting.
             a.href = recentPage.href;
             a.className = "list-group-item";
             a.setAttribute("data-entity-search-group", group);
             a.addEventListener("blur", hideSearchPopup);
-            var linkText = document.createTextNode(index + ") " + recentPage.title);
+            var linkText = document.createTextNode(recentPage.title);
             a.appendChild(linkText);
             popup.appendChild(a);
         });
