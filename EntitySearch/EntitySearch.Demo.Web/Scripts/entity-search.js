@@ -126,20 +126,26 @@
     // (The memory structure for recents allows duplicates.)
     function getTopDistinctRecents(count) {
         var recents = getFromLocalStorage();
+        if (!recents) {
+            return [];
+        }
+
         // todo seed array with certain size?
         var topRecents = [];
         if (recents.length < count) {
             count = recents.length;
         }
 
-        // todo - don't return the page we are already on???
-
-        // Might be nice to have underscore here, but this is such a small library; we don't want dependencies.
-        for (var index = 0; topRecents.length < count; index++) {
+        for (var index = 0; index < recents.length && topRecents.length < count; index++) {
             var recent = recents[index];
 
-            var isDuplicate = false;
+            // Exclude the current page from recents.
+            if (recent.href === document.location.href) {
+                continue;
+            }
 
+            // Exclude duplicates (Distinct).
+            var isDuplicate = false;
             for (var index2 = 0; index2 < topRecents.length; index2++) {
                 var topRecent = topRecents[index2];
                 if (topRecent.href === recent.href) {

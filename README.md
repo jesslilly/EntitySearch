@@ -22,8 +22,9 @@ Provide a search box where:
 	TODO: Provide example
 
 ## Assumptions
-1. Devs will not want to create new data structures to use EntitySearch. 
-2. Therefore, localStorage will suffice for recent tracking. But, recents will be different across user devices...
+1. Developers will not want to create new data structures to use EntitySearch. 
+1. Therefore, localStorage will suffice for recent tracking. But, recents will be different across user devices...
+1. Developers do not want libraries that have tons of dependencies.  Therefore, this is written in pure javascript instead of jQuery.  Also other libraries like underscore are not used.
 
 ## TODOs
 ### Necessary
