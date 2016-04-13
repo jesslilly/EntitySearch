@@ -15,7 +15,9 @@ Provide a search box where:
 
 * Include the js file in your Layout or _ViewStart.cstml file.
 
-    <script src=@Url.Content("~/Scripts/entity-search.js")></script>
+```javascript
+<script src=@Url.Content("~/Scripts/entity-search.js")></script>
+```
 
 * Create a text box with HTML attribute data-entity-search
 
