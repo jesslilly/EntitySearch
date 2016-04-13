@@ -31,7 +31,23 @@ Provide a search box where:
                 </form>
 ```
 
-* Add data- attribute to pages you want to be tracked. TODO: Code example. 
+* Add the data-entity-search-route-data attribute to pages you want to be tracked.
+
+```cshtml
+    @* EntitySearch: Set Route Data in the page to track this page as a recent. *@
+    @{
+        var routeValues = ViewContext.RouteData.Values.ToDictionary(x => x.Key, x => x.Value);
+        // You will need to customize this if statement to configure which pages you want to be searchable.
+        if (routeValues.ContainsKey("action")
+            && (string)routeValues["action"] != "Edit"
+            && (string)routeValues["action"] != "Create"
+            && (string)routeValues["action"] != "Delete")
+        {
+            <script type="application/json" data-entity-search-route-data>@Html.Raw(Json.Encode(routeValues))</script>
+        }
+    }
+```
+
 * Create a controller action like this and seed the search engine with your data
 	TODO: Provide example
 
