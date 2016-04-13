@@ -13,7 +13,9 @@ Provide a search box where:
 
 ## How to use EntitySearch
 
-* Include the js file in your Layout or _ViewStart.cstml file.
+* Open your _Layout.cshtml file.
+
+* Include the js file.
 
 ```javascript
 <script src=@Url.Content("~/Scripts/entity-search.js")></script>
@@ -21,7 +23,13 @@ Provide a search box where:
 
 * Create a text box with HTML attribute data-entity-search
 
-    <script src=@Url.Content("~/Scripts/entity-search.js")></script>
+```html
+<form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" id="entity-search-in-nav" data-entity-search="">
+                    </div>
+                </form>
+```
 
 * Add data- attribute to pages you want to be tracked. TODO: Code example. 
 * Create a controller action like this and seed the search engine with your data
