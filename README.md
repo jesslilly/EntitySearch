@@ -14,7 +14,9 @@ Provide a search box where:
 ## How to use EntitySearch
 
 * Include the js file in your Layout or _ViewStart.cstml file.
-	TODO: Provide example
+
+    <script src=@Url.Content("~/Scripts/entity-search.js")></script>
+
 * Create a text box with HTML attribute data-entity-search
 	TODO: Provide example
 * Add data- attribute to pages you want to be tracked. TODO: Code example. 
