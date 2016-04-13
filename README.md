@@ -18,7 +18,9 @@ Provide a search box where:
     <script src=@Url.Content("~/Scripts/entity-search.js")></script>
 
 * Create a text box with HTML attribute data-entity-search
-	TODO: Provide example
+
+    <script src=@Url.Content("~/Scripts/entity-search.js")></script>
+
 * Add data- attribute to pages you want to be tracked. TODO: Code example. 
 * Create a controller action like this and seed the search engine with your data
 	TODO: Provide example
