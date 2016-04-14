@@ -60,6 +60,7 @@ Provide a search box where:
 1. Add javascript tests.  Maybe use a test page, or jasmine.
 1. Refactor to RecentPage object.
 1. Search for TODOs in code.
+1. add search by ID to the demo app. 
 
 ### Nice to have / Future
 1. for multi tenant or multiple user accounts in an app, need to key local storage of recents by a base url/user group?
