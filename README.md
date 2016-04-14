@@ -21,7 +21,7 @@ Provide a search box where:
 <script src=@Url.Content("~/Scripts/entity-search.js")></script>
 ```
 
-* Create a text box with HTML attribute data-entity-search
+* Create a text box with HTML attribute `data-entity-search`.
 
 ```cshtml
 <form class="navbar-form navbar-left" role="search">
@@ -31,7 +31,7 @@ Provide a search box where:
 </form>
 ```
 
-* Add the data-entity-search-route-data attribute to pages you want to be tracked.
+* Add the `data-entity-search-route-data` attribute to pages you want to be tracked.
 
 ```cshtml
 @{
@@ -60,6 +60,7 @@ Provide a search box where:
 1. Add javascript tests.  Maybe use a test page, or jasmine.
 1. Refactor to RecentPage object.
 1. Search for TODOs in code.
+1. Have a max recents.
 
 ### Nice to have / Future
 1. for multi tenant or multiple user accounts in an app, need to key local storage of recents by a base url/user group?
