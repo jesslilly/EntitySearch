@@ -77,6 +77,11 @@
         this.parentElement.appendChild(popup);
     }
 
+    /**
+     * If the page contains "script[data-entity-search-route-data]" with JSON,
+     * add it as a recent page in localStorage
+     * @returns {} 
+     */
     function trackRecentPage() {
         var scriptElement = document.querySelector("script[data-entity-search-route-data]");
         if (!scriptElement) {
@@ -94,14 +99,18 @@
         }
     }
 
+    /**
+     * Add a recent page to localStorage.
+     * @param {} pageInfo 
+     * @returns {} 
+     */
     function addToLocalStorage(pageInfo) {
         // The key to localStorage is important.
         // TODO investigate if roots https://myhost.com/app1 and https://myhost.com/app2 are the same.  I think they are!  If they are, we need to add the virtual directory to the key.
         // We have to use href here for now.  We can't assume a default ASP.NET MVC RouteConfig.
         // TODO Some way of setting a max number of recent tracking.
         // TODO instead of many keys, perhaps use one key with an object.  Might be inefficient to JSON.parse the object all the time?
-        // TODO prevent duplicates.  Maybe use a map instead of an array.
-        var key = "entity-search-"; // TODO + base url;
+        var key = "entity-search-"; // TODO + base url + virtual dir;
 
         var recents = JSON.parse(localStorage.getItem(key));
         if (! Array.isArray(recents)) {
@@ -118,14 +127,21 @@
         localStorage.setItem(key, JSON.stringify(recents));
     }
 
+    /**
+     * Get recent pages from localStorage.  Will contain duplicates.
+     * @returns {} 
+     */
     function getFromLocalStorage() {
-        var key = "entity-search-"; // TODO + base url;
+        var key = "entity-search-"; // TODO + base url + virtual dir;
         return JSON.parse(localStorage.getItem(key));
     }
 
-    // TODO better jsdoc type comments.
-    // Return the top N distinct recently visited pages.
-    // (The memory structure for recents allows duplicates.)
+    /**
+     * Return the top N distinct recently visited pages.
+     * (The memory structure for recents allows duplicates.)
+     * @param {} count 
+     * @returns {} 
+     */
     function getTopDistinctRecents(count) {
         var recents = getFromLocalStorage();
         if (!recents) {
