@@ -68,6 +68,8 @@ Provide a search box where:
 1. Number of results in popup data element.  Example: data-entity-search="{show:5}"
 1. Fix git repo for Windows line endings.
 1. Hit Esc key to close recentPopup.
+1. Support different "areas" for a single application.  This would control the key in local storage. 
+1. similarly, we could pass in the base URL and virtual directory to solve the problem of two applications on the same server.  this would be used for the local storage key. 
 
 ## Done
 1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. although that is the default. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
