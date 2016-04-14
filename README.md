@@ -31,7 +31,7 @@ Provide a search box where:
 </form>
 ```
 
-* Add the `data-entity-search-route-data` attribute to pages you want to be tracked.
+* Add the `data-entity-search-route-data` attribute with route info JSON to pages you want to be tracked.
 
 ```cshtml
 @{
@@ -60,7 +60,6 @@ Provide a search box where:
 1. Add javascript tests.  Maybe use a test page, or jasmine.
 1. Refactor to RecentPage object.
 1. Search for TODOs in code.
-1. Have a max recents.
 
 ### Nice to have / Future
 1. for multi tenant or multiple user accounts in an app, need to key local storage of recents by a base url/user group?
@@ -71,9 +70,10 @@ Provide a search box where:
 1. Hit Esc key to close recentPopup.
 
 ## Done
-1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
+1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. although that is the default. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
 1. Track recents in local storage.
 1. Retrive recents in searchPopup.
 1. Recent object should have lastVisted, title, url (from document.location.href), entity type (controller), all route values including ID.
 1. Need to fix duplicates and sort order.
+1. Have a max recents. (100)
 
