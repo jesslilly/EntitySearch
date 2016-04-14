@@ -61,8 +61,12 @@ Provide a search box where:
 1. Refactor to RecentPage object.
 1. Search for TODOs in code.
 1. add search by ID to the demo app. 
+1. Look at MSFT Cognitive Team to see if we can use anything from that.
+1. Research other solutions that track recents and/or do search.
 
 ### Nice to have / Future
+1. Can we do search auto-complete from a public API?  Example, start typing Bos and get suggestions like Boston, Bose, etc.
+1. Can we implement viewer history from different sources?  For example, if an app already tracks viewer history from some other means, can we hook into it?  (Via XHR)
 1. for multi tenant or multiple user accounts in an app, need to key local storage of recents by a base url/user group?
 1. Allow search boxes filtered by entity type (for linking)
 1. Security groups (filter the search by tenant/security group?)
