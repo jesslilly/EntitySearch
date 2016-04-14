@@ -23,29 +23,28 @@ Provide a search box where:
 
 * Create a text box with HTML attribute data-entity-search
 
-```html
+```cshtml
 <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" id="entity-search-in-nav" data-entity-search="">
-                    </div>
-                </form>
+    <div class="form-group">
+        <input data-entity-search type="text" class="form-control" placeholder="Search" id="entity-search-in-nav">
+    </div>
+</form>
 ```
 
 * Add the data-entity-search-route-data attribute to pages you want to be tracked.
 
 ```cshtml
-    @* EntitySearch: Set Route Data in the page to track this page as a recent. *@
-    @{
-        var routeValues = ViewContext.RouteData.Values.ToDictionary(x => x.Key, x => x.Value);
-        // You will need to customize this if statement to configure which pages you want to be searchable.
-        if (routeValues.ContainsKey("action")
-            && (string)routeValues["action"] != "Edit"
-            && (string)routeValues["action"] != "Create"
-            && (string)routeValues["action"] != "Delete")
-        {
-            <script type="application/json" data-entity-search-route-data>@Html.Raw(Json.Encode(routeValues))</script>
-        }
+@{
+    var routeValues = ViewContext.RouteData.Values.ToDictionary(x => x.Key, x => x.Value);
+    // You will need to customize this if statement to configure which pages you want to be searchable.
+    if (routeValues.ContainsKey("action")
+        && (string)routeValues["action"] != "Edit"
+        && (string)routeValues["action"] != "Create"
+        && (string)routeValues["action"] != "Delete")
+    {
+        <script data-entity-search-route-data type="application/json">@Html.Raw(Json.Encode(routeValues))</script>
     }
+}
 ```
 
 * Create a controller action like this and seed the search engine with your data
@@ -68,6 +67,7 @@ Provide a search box where:
 1. Security groups (filter the search by tenant/security group?)
 1. Number of results in popup data element.  Example: data-entity-search="{show:5}"
 1. Fix git repo for Windows line endings.
+1. Hit Esc key to close recentPopup.
 
 ## Done
 1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 

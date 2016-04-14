@@ -5,42 +5,22 @@
 <h1>EntitySearch Demo</h1>
 <p class="lead">This is a demo web app to show the features of EntitySearch.</p>
 
-<div class="row">
-    <div class="col-sm-3">
+@*<div class="list-group">
+        @Html.ActionLink("Warehouses", "Index", new {Controller = "Warehouses"}, htmlAttributes: new {@class = "list-group-item"})
+        @Html.ActionLink("Products", "Index", new {Controller = "Products"}, htmlAttributes: new {@class = "list-group-item"})
+        @Html.ActionLink("Inventory", "Index", new {Controller = "Inventories"}, htmlAttributes: new {@class = "list-group-item"})
+        @Html.ActionLink("Customers", "Index", new {Controller = "Customers"}, htmlAttributes: new {@class = "list-group-item"})
+        @Html.ActionLink("Orders", "Index", new {Controller = "Orders"}, htmlAttributes: new {@class = "list-group-item"})
+    </div>*@
 
-        <div class="list-group">
-            @Html.ActionLink("Warehouses", "Index", new {Controller = "Warehouses"}, htmlAttributes: new {@class = "list-group-item"})
-            @Html.ActionLink("Products", "Index", new {Controller = "Products"}, htmlAttributes: new {@class = "list-group-item"})
-            @Html.ActionLink("Inventory", "Index", new {Controller = "Inventories"}, htmlAttributes: new {@class = "list-group-item"})
-            @Html.ActionLink("Customers", "Index", new {Controller = "Customers"}, htmlAttributes: new {@class = "list-group-item"})
-            @Html.ActionLink("Orders", "Index", new {Controller = "Orders"}, htmlAttributes: new {@class = "list-group-item"})
-        </div>
-    </div>
-    <div class="col-sm-9">
-        <div class="alert alert-info"><span class="label label-primary">1</span> Click on one of the entities here or in the navbar.</div>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-sm-3">
-
-        <form class="form" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" id="entity-search-in-page" data-entity-search="">
-            </div>
-        </form>
+<div class="alert alert-info"><span class="label label-primary">1</span> Click on some of the entities in the navbar.</div>
+<div class="alert alert-info"><span class="label label-primary">2</span> Then click in the search box here or in the navbar.  You should see your recently visited pages in the list.</div>
+<form class="form" role="search">
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" id="entity-search-in-page" data-entity-search>
     </div>
-    <div class="col-sm-9">
-        <div class="alert alert-info"><span class="label label-primary">2</span> Then click in the search box here or in the navbar.  You should see that page in the list.</div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-sm-3">
-    </div>
-    <div class="col-sm-9">
-        <div class="alert alert-info"><span class="label label-primary">3</span> Then type in the search box to perform a search.</div>
-    </div>
-</div>
+</form>
+<div class="alert alert-info"><span class="label label-primary">3</span> Then type in the search box to perform a search.</div>
 
 

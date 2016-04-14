@@ -43,8 +43,9 @@
         popup.setAttribute("data-entity-search-popup-id", group);
         popup.style.position = "absolute";
         popup.style.zIndex = 999;
+        // TODO I suppose I should include CSS or a custom class name so devs can override this?
         popup.style.backgroundColor = "#FFFFFF";
-        popup.style["box-shadow"] = "0px 4px 4px gray";
+        popup.style["box-shadow"] = "0px 4px 4px lightgray";
 
         var recents = getTopDistinctRecents(8); // todo make this 8 configurable?
 

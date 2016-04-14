@@ -13,10 +13,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Product.Manufacturer)
+            @Html.DisplayNameFor(model => model.Product)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Warehouse.Name)
+            @Html.DisplayNameFor(model => model.Warehouse)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Quantity)
@@ -28,6 +28,7 @@
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Product.Manufacturer)
+            @Html.ActionLink(item.Product.ModelNumber, "Details", new { controller = "Products", id = item.ProductId})
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Warehouse.Name)
