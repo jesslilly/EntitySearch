@@ -10,3 +10,8 @@ Now you have npm.
 Install gulp
 npm install gulp -g
 in the directory for this project, run npm install to install development depenedencies.
+
+
+## Obsolete?
+
+I might delete this project.  It requires a lot of setup.
