@@ -4,6 +4,7 @@ This project is in development.
 
 ## Use Case
 
+TODO: Add pictures.
 
 For ASP.NET MVC applications, provide a way of tracking "recently visited pages" and search functionality.  Support bootstrap theming.
 
