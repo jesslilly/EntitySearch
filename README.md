@@ -79,11 +79,17 @@ Provide a search box where:
 1. Support different "areas" for a single application.  This would control the key in local storage. 
 1. similarly, we could pass in the base URL and virtual directory to solve the problem of two applications on the same server.  this would be used for the local storage key. 
 
-## Done
+## Completed Features
 1. Mechanism to get Route info into local storage. data attribute on page?  We can't assume page title is what people will want to appear in the recent list. although that is the default. We also can't assume a certain route config (controller/action/id). Also by allowing devs to control when recent data is added to the page, they can choose to not track edit or create pages. 
 1. Track recents in local storage.
 1. Retrive recents in searchPopup.
 1. Recent object should have lastVisted, title, url (from document.location.href), entity type (controller), all route values including ID.
 1. Need to fix duplicates and sort order.
 1. Have a max recents. (100)
+
+# For Developers
+
+Do you want to help develop and improve this tool?  Great.
+
+Please look at the [Developer Readme!](DEVELOPER_README.md)
 
