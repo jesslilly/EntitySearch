@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch.Demo.Models", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntitySearch.Engine", "EntitySearch.Engine\EntitySearch.Engine.csproj", "{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "EntitySearch.Js", "EntitySearch.Js\EntitySearch.Js.njsproj", "{2979FDE9-12D6-451F-BB79-80A7316E548D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A36B0F4-FA7F-4ADD-8E7D-4764A0CA036C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2979FDE9-12D6-451F-BB79-80A7316E548D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2979FDE9-12D6-451F-BB79-80A7316E548D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2979FDE9-12D6-451F-BB79-80A7316E548D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2979FDE9-12D6-451F-BB79-80A7316E548D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
