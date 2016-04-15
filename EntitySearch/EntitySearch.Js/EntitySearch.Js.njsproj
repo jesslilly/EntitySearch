@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
-    <Compile Include="build\js\entity-search.min.js" />
     <Compile Include="gulpfile.js" />
     <Compile Include="js\entity-search.js" />
     <Compile Include="recentPageSpec.js" />
