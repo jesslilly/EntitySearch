@@ -57,6 +57,7 @@ Provide a search box where:
 
 ## TODOs
 ### Necessary
+1. Revert gulp, node, npm commit. Use QUnit for testing - fewer dev dependencies. 
 1. Add javascript tests.  Maybe use a test page, or jasmine.
 1. Refactor to RecentPage object.
 1. Search for TODOs in code.
