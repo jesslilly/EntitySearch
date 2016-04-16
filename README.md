@@ -102,12 +102,14 @@ Provide a search box where:
 ### Search
 1. Build cache object
 1. LINQ to load cache. 
-1. POST action to maintain cache on CRUD actions. 
+1. Simple full text search before implementing indexes. 
+1. POST action to maintain cache on CRUD actions.  Update indexes. 
 1. Build indexes. 
 1. Async Controller actions for auto complete and search results
 1. Wire up auto complete events to hit controller action XHR. 
 1. cache metadata metric for popular search items. 
 1. Prioritize popular items in search. 
+1. Way to limit cache memory size. 
 
 ### Nice to have / Future
 1. Can we do search auto-complete from a public API?  Example, start typing Bos and get suggestions like Boston, Bose, etc.
