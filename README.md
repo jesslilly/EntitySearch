@@ -86,23 +86,24 @@ Provide a search box where:
 ```
     1. QUnit tests
     1. console.error if config is bad JSON. 
-    1. Code to set defaults. 
+    1. Code to set defaults if missing or partial config. 
     1. Put in EntitySearch.Config. 
 1. Implement glyphicons or css classes for recents. 
 1. Revert gulp, node, npm commit.
 1. Build QUnit tests for recent tracking
 1. Refactor to RecentPage object.
 1. Search for TODOs in code.
-1. add search by ID to the demo app. 
 1. Look at MSFT Cognitive Team to see if we can use anything from that.
 1. Research other solutions that track recents and/or do search.
 1. Implement a top 100 recents page / modal that can be filtered.
 1. Investigate Microsoft Azure Search REST API
 
 ### Search
+1. Search recents in localstorage first?  Combine and distinct with search results?
 1. Build cache object
-1. LINQ to load cache. 
+1. LINQ to load cache in app start?
 1. Simple full text search before implementing indexes. 
+1. add search by ID to the demo app. 
 1. POST action to maintain cache on CRUD actions.  Update indexes. 
 1. Build indexes. 
 1. Async Controller actions for auto complete and search results
