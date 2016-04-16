@@ -65,7 +65,7 @@ Provide a search box where:
   recents: {
     max: 100,
     popup: {
-      count: 6
+      show: 6
     },
     classes: {
       Warehouses: building,
@@ -73,6 +73,13 @@ Provide a search box where:
       Products: package,
       Inventory: inventory,
       Orders: cart
+    }
+  },
+  search: {
+    idleDelayMs: 500,
+    minCharactersToSearch: 2,
+    suggestions : {
+      show: 5
     }
   }
 }
@@ -91,6 +98,16 @@ Provide a search box where:
 1. Research other solutions that track recents and/or do search.
 1. Implement a top 100 recents page / modal that can be filtered.
 1. Investigate Microsoft Azure Search REST API
+
+### Search
+1. Build cache object
+1. LINQ to load cache. 
+1. POST action to maintain cache on CRUD actions. 
+1. Build indexes. 
+1. Async Controller actions for auto complete and search results
+1. Wire up auto complete events to hit controller action XHR. 
+1. cache metadata metric for popular search items. 
+1. Prioritize popular items in search. 
 
 ### Nice to have / Future
 1. Can we do search auto-complete from a public API?  Example, start typing Bos and get suggestions like Boston, Bose, etc.
