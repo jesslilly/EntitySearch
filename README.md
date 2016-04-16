@@ -58,8 +58,32 @@ Provide a search box where:
 
 ## TODOs
 ### Necessary
-1. Revert gulp, node, npm commit. Use QUnit for testing - fewer dev dependencies. 
-1. Add javascript tests.  Maybe use a test page, or jasmine.
+1. Get Web Essentials minification working. 
+1. data-entity-search-config script tag with JSON content like this
+```javascript
+{
+  recents: {
+    max: 100,
+    popup: {
+      count: 6
+    },
+    classes: {
+      Warehouses: building,
+      Customers: user,
+      Products: package,
+      Inventory: inventory,
+      Orders: cart
+    }
+  }
+}
+```
+    1. QUnit tests
+    1. console.error if config is bad JSON. 
+    1. Code to set defaults. 
+    1. Put in EntitySearch.Config. 
+1. Implement glyphicons or css classes for recents. 
+1. Revert gulp, node, npm commit.
+1. Build QUnit tests for recent tracking
 1. Refactor to RecentPage object.
 1. Search for TODOs in code.
 1. add search by ID to the demo app. 
@@ -87,6 +111,8 @@ Provide a search box where:
 1. Recent object should have lastVisted, title, url (from document.location.href), entity type (controller), all route values including ID.
 1. Need to fix duplicates and sort order.
 1. Have a max recents. (100)
+1. Use QUnit for testing - fewer dev dependencies.
+1. Add javascript tests.
 
 # For Developers
 
