@@ -62,24 +62,28 @@ Provide a search box where:
 1. data-entity-search-config script tag with JSON content like this
 ```javascript
 {
-  recents: {
-    max: 100,
-    popup: {
-      show: 6
+  "recents": {
+    "max": 100,
+    "popup": {
+      "show": 6
     },
-    classes: {
-      Warehouses: building,
-      Customers: user,
-      Products: package,
-      Inventory: inventory,
-      Orders: cart
+    "storage": {
+      "type": "localStorage",
+      "uri": "http://some/endpoint",
+    },
+    "classes": {
+      "Warehouses": "building",
+      "Customers": "user",
+      "Products": "package",
+      "Inventory": "inventory",
+      "Orders": "cart"
     }
   },
-  search: {
-    idleDelayMs: 500,
-    minCharactersToSearch: 2,
-    suggestions : {
-      show: 5
+  "search": {
+    "idleDelayMs": 500,
+    "minCharactersToSearch": 2,
+    "suggestions" : {
+      "show": 5
     }
   }
 }
@@ -97,6 +101,7 @@ Provide a search box where:
 1. Research other solutions that track recents and/or do search.
 1. Implement a top 100 recents page / modal that can be filtered.
 1. Investigate Microsoft Azure Search REST API
+1. Support API for storing recents cross-device. 
 
 ### Search
 1. Search recents in localstorage first?  Combine and distinct with search results?
