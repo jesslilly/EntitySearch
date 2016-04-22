@@ -58,6 +58,8 @@ Provide a search box where:
 
 ## TODOs
 ### Necessary
+1. make the config for locslStorage vs. AJAX better. Don't use a magic string. 
+1. Add config for localStorage key to be `new Uri(Request.Url, Url.Content("~"))`. Or maybe this can be done in the framework so users don't have to require config settings. 
 1. Get Web Essentials minification working. 
 1. data-entity-search-config script tag with JSON content like this
 ```javascript
