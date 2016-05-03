@@ -95,6 +95,7 @@ Provide a search box where:
     1. Code to set defaults if missing or partial config. 
     1. Put in EntitySearch.Config. 
 1. Implement glyphicons or css classes for recents. 
+1. Do not track a recent page if the same page is visited repeatedly.
 1. Revert gulp, node, npm commit.
 1. Build QUnit tests for recent tracking
 1. Refactor to RecentPage object.
